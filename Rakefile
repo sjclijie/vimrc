@@ -10,5 +10,7 @@ task :deploy do
     system 'sh ~/.vim/bundle/YouCompleteMe/install.sh'
     system 'cd ~/.vim/bundle/tern_for_vim/ && npm install'
 
+    system 'cp -f tern-project ~/.tern-project'
+
 end
 
