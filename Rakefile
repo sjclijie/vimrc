@@ -1,8 +1,8 @@
 desc "deploy vimrc"
 
 task :deploy do
-    
-    system 'mkdir ~/.vim'
+	
+    system 'git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/vundle'
     system 'cp -f vimrc ~/.vimrc'
     system 'cp -af colors ~/.vim/'
     system 'vim +BundleInstall +qa'
