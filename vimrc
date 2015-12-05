@@ -1,3 +1,9 @@
+" vundle 配置 {
+    set rtp+=~/.vim/bundle/vundle
+    call vundle#rc()
+" }
+
+
 " ======= 插件安装 ======= 
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'mattn/emmet-vim'
@@ -11,6 +17,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'Valloric/YouCompleteMe'
+
 
 " ==========================   基本设置  ========================= 
 "设置内部编码
@@ -208,9 +215,5 @@ endif
     let g:neocomplcache_enable_at_startup=1
 " }
 
-" vundle 配置 {
-    set rtp+=~/.vim/bundle/vundle
-    call vundle#rc()
-" }
 
 "map <C-m> :<Esc>:!python %<CR>
