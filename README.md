@@ -8,6 +8,7 @@ Manage vim scripts by Bundle.
 
 * vim
 * git
+* npm
 
 ## Install
 
