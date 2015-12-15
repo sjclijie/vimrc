@@ -108,7 +108,7 @@ if has('gui_running')
     " 为光标所在行加下划线
     set cursorline
     "colorscheme murphy
-    colorscheme dracula
+    "colorscheme dracula
     set guifont=YaHei\ Consolas\ Hybrid:h14
     highlight Cursorline guibg=grey15
     " 禁止显示菜单栏和工具条
