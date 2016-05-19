@@ -18,6 +18,6 @@ Install will overwrite your .vimrc file and .vim folder, be sure **backup your v
 
     cd vimrc
     
-    rake deploy
+    sh install.sh
 
     Done.
