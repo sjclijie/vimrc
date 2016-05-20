@@ -17,6 +17,7 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle "Raimondi/delimitMate"
 Bundle 'marijnh/tern_for_vim'
+Bundle 'phpcomplete.vim'
 "}}}
 
 
@@ -198,7 +199,7 @@ endif"}}}
 " }"}}}
 
 " AutoComplPop 配置 {"{{{
-    autocmd FileType php setlocal dict+=~/.vim/bundle/AutoComplPop/php_funclist.txt
+    autocmd FileType php setlocal dict+=~/.vim/doc/php_funclist.txt
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
         let g:AutoComplPop_Behavior['php'] = []

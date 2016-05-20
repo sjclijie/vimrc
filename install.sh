@@ -8,3 +8,5 @@ vim +BundleInstall +qa
 sh ~/.vim/bundle/YouCompleteMe/install.sh
 cd ~/.vim/bundle/tern_for_vim/ && npm install
 cp -f tern-project ~/.tern-project
+
+mkdir -p ~/.vim/doc && cp -f ./php_funclist.txt ~/.vim/doc/
