@@ -13,6 +13,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim.git'
 "Bundle 'marijnh/tern_for_vim'
 "Bundle 'Valloric/YouCompleteMe'
 "}}}
