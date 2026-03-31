@@ -1,3 +1,6 @@
+"关闭兼容模式（必须放在最前面）
+set nocompatible
+
 "vundle 配置 {"{{{
     set rtp+=~/.vim/bundle/vundle
     call vundle#rc()
@@ -6,18 +9,15 @@
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'mattn/emmet-vim'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'kien/ctrlp.vim'
 Bundle "Raimondi/delimitMate"
-Bundle 'marijnh/tern_for_vim'
-Bundle 'phpcomplete.vim'
 "}}}
 
 
@@ -27,7 +27,7 @@ set encoding=utf-8
 "设置当前编辑的文件编码
 set fileencoding=utf-8
 "打开支持的文件编码
-set fileencodings=utf8,utf8-bom,gbk,gb2312,big5
+set fileencodings=ucs-bom,utf-8,gbk,gb2312,big5
 set fileformat=unix
 "显示匹配括号
 set showmatch
@@ -37,8 +37,7 @@ filetype on
 filetype plugin on
 "搜索时大小写不敏感
 set ignorecase
-"关闭兼容模式
-set nocompatible
+
 "vim自身命令行模式智能补全
 set wildmenu
 "显示行号
@@ -57,9 +56,12 @@ set ruler
 set laststatus=2
 "禁止代码折行
 "set nowrap
-set mouse=a
-"代码匹配
-set showmatch
+if has('gui_running')
+  set mouse=a
+else
+  set mouse=
+endif
+
 "文件在vim之外修改后自动读入
 set autoread
 "帮助文件设置为中文
@@ -130,19 +132,13 @@ if has('gui_running')"{{{
 endif"}}}
 
 "powerline{"{{{
-    set laststatus=2
-    "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
-    "set guifont=Consolas\ for\ Powerline\ FixedD:h9
-    set guifont=Consolas\ for\ Powerline\ FixedD
     let g:Powerline_symbols = 'fancy'
-    set fillchars+=stl:\ ,stlnc:\
 "}"}}}
 
 "NERDTree配置{"{{{
     "打开文件时自动开启NERDTree
-    autocmd VimEnter * NERDTree
-    wincmd w
-    autocmd VimEnter * wincmd w
+    autocmd VimEnter * NERDTree | wincmd w
+
     "设置NERDTree子窗口宽度
     let NERDTreeWinSize=26
     "设置NERDTree子窗口位置
@@ -165,7 +161,7 @@ endif"}}}
     " 随vim启动
     let g:indent_guides_enable_on_vim_startup=1    
     " 从第二层开始可视化显示缩进
-    let g:indet_guides_start_level=2
+    let g:indent_guides_start_level=2
     "色块宽度
     let g:indent_guides_guide_size=1
     "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=lightgrey
@@ -198,22 +194,6 @@ endif"}}}
     map <Leader>x :MBEbw<CR>
 " }"}}}
 
-" AutoComplPop 配置 {"{{{
-    autocmd FileType php setlocal dict+=~/.vim/doc/php_funclist.txt
-    if !exists('g:AutoComplPop_Behavior')
-        let g:AutoComplPop_Behavior = {}
-        let g:AutoComplPop_Behavior['php'] = []
-        call add(g:AutoComplPop_Behavior['php'],{'command':'','pattern':printf('(->|::|$)k{%d,}$', 0),'repeat' :0})
-    endif
-" }"}}}
-
 "easymontion 配置 {"{{{
     let g:EasyMotion_use_smartsign_us=1
 "}"}}}
-
-"neocomplcache配置 {"{{{
-    let g:neocomplcache_enable_at_startup=1
-    let g:netcomplcache_enable_auto_select=1
-"}"}}}
-
-"map <C-m> :<Esc>:!python %<CR>
