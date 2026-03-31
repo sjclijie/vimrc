@@ -18,6 +18,10 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'kien/ctrlp.vim'
 Bundle "Raimondi/delimitMate"
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 "}}}
 
 
